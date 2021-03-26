@@ -10,11 +10,11 @@ Required R packages: `glmnet` and `MASS`
 # LASSO
   > cv.lasso.fit=cv.glmnet(x,y)  
   > lasso.fit.glmnet=glmnet(x,y)  
-  > log.confirmed.pred=predict(cv.lasso.fit,newx=x[test,],type='response',s="lambda.1se")
+  > log.confirmed.pred=predict(cv.lasso.fit,newx=x[test,],type='response',s="lambda.1se")  
   > p.cor=cor(log1p(confirmed[test]),log.confirmed.pred)
 # AutoLasso
   > autolasso.fit=auto.lasso(x,y)  
-  > log.confirmed.pred=cbind(rep(1,length(test)),x[test,])%*%autolasso.fit$coef
+  > log.confirmed.pred=cbind(rep(1,length(test)),x[test,])%*%autolasso.fit$coef  
   > p.cor=cor(log1p(confirmed[test]),log.confirmed.pred)
 # Model Compare
   > model.compare(n=100,ratio=0.5,p.true=5,rho=0,cor.type=1,snr=10,N.sim=100)
