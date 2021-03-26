@@ -4,22 +4,19 @@ Linear regression is one of the most widely used statistical methods and with th
 
 Required R packages: `glmnet` and `MASS`
 
-Examples:
-  > #LASSO
+## Examples:
   > x=model.matrix(log1p(confirmed) ~ log1p(confirmed.lag)+day+cancel+internal+state-1,data=covid.data)
   > y=log1p(confirmed)
+# LASSO
   > cv.lasso.fit=cv.glmnet(x,y)
   > lasso.fit.glmnet=glmnet(x,y)
   > log.confirmed.pred=predict(cv.lasso.fit,newx=x[test,],type='response',s="lambda.1se")
   > p.cor=cor(log1p(confirmed[test]),log.confirmed.pred)
-  
-  > #AutoLasso
+# AutoLasso
   > autolasso.fit=auto.lasso(x,y)
   > log.confirmed.pred=cbind(rep(1,length(test)),x[test,])%*%autolasso.fit$coef
   > p.cor=cor(log1p(confirmed[test]),log.confirmed.pred)
-  
-  > #Model Compare
+# Model Compare
   > model.compare(n=100,ratio=0.5,p.true=5,rho=0,cor.type=1,snr=10,N.sim=100)
-  
-  > #Simulatuion study
+# Simulation Study  
   > sim.study(n=100,N.sim=100,ratio=2,p.true=5,rho=0.25,cor.type=1,snr=10,method=1)`
