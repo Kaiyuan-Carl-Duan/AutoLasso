@@ -4,7 +4,7 @@ Linear regression is one of the most widely used statistical methods and with th
 
 Required R packages: `glmnet` and `MASS`
 
-Author: Sujit Ghosh, Kaiyuan(Carl) Duan, Guangjie Yu
+Author: Sujit Ghosh, Kaiyuan(Carl) Duan, and Guangjie Yu
 
 ## Examples:
   > x=model.matrix(log1p(confirmed) ~ log1p(confirmed.lag)+day+cancel+internal+state-1,data=covid.data)  
