@@ -19,4 +19,4 @@ Required R packages: `glmnet` and `MASS`
 # Model Compare
   > model.compare(n=100,ratio=0.5,p.true=5,rho=0,cor.type=1,snr=10,N.sim=100)
 # Simulation Study  
-  > sim.study(n=100,N.sim=100,ratio=2,p.true=5,rho=0.25,cor.type=1,snr=10,method=1)`
+  > sim.study(n=100,N.sim=100,ratio=2,p.true=5,rho=0.25,cor.type=1,snr=10,method=1)
