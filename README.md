@@ -8,6 +8,10 @@ Required R packages: `glmnet` and `MASS`
 
 Author: Sujit Ghosh, Kaiyuan(Carl) Duan, and Guangjie Yu
 
+## Application
+
+To study the application of Automated LASSO approach, we compare with linear regression `lm` and Classic LASSO method. Data was taken from the R package `COVID19` available to the public for educational and scientific use. Due to the outbreak of corona-virus in the United States, exploding in March and stable in the beginning of June, we selected the data based on the date between March 1st and June 10th, 2020. The dataset presented in this paper is four predictors (selected from a preliminary analysis of a set of five variables) modeled on a selected response variable. There were 5202 observations. Conclusions about the data were not desired, the data was used only to observe how linear regression `lm` Automated LASSO, classic LASSO models perform on highly correlated data sets. All computation was done with R software using the package `glmnet` and `AutoLasso`.
+
 ## Examples:
   > x=model.matrix(log1p(confirmed) ~ log1p(confirmed.lag)+day+cancel+internal+state-1,data=covid.data)  
   > y=log1p(confirmed)
